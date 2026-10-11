@@ -1,6 +1,18 @@
+/* === GLOBAL RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background: #d6c7b2 ;
+}
+
+body {
+  margin: 10px;
+}
+
 /* === HEADER === */
 #header {
-    border: 2px solid black;
+    border: 2px solid #eeb631;
     border-radius: 20px;
 
     display: flex;
@@ -14,7 +26,7 @@
 
 /* === ... === */
 #tjanster {
-    border: 2px solid black;
+    border: 2px solid #eeb631;
     border-radius: 5px;
     width: fit-content;
     margin-top: 10px;
