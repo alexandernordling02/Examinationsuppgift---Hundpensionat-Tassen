@@ -1,0 +1,12 @@
+#header {
+    border: 2px solid black;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+/* #header, a {
+    text-decoration: none;
+} */
