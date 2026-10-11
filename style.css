@@ -1,3 +1,4 @@
+/* === HEADER === */
 #header {
     border: 2px solid black;
     border-radius: 20px;
@@ -7,6 +8,15 @@
     justify-content: space-evenly;
 }
 
-/* #header, a {
+#header, a {
     text-decoration: none;
-} */
+}
+
+/* === ... === */
+#tjanster {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px;
+}
