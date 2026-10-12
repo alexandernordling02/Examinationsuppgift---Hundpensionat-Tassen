@@ -49,7 +49,8 @@ html, body {
 .contentWrapper2 {
   background: #36402C;
   height: 200px;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   display: flex;
   align-items: baseline;
