@@ -1,14 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* === GLOBAL RESET === */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  background: white;
+  /* background: white; */
 }
 
-body {
-  margin: 10px;
-}
 
 /* === HEADER === */
 /* #header {
@@ -24,11 +26,42 @@ body {
   justify-content: space-evenly;
 } */
 
-#header {
-  background: #eeb631;
-  width: 100vw;
-  margin: 0px;
+.contentWrapper {
+  background: #36402C;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
 }
+
+.contentWrapper a {
+  color: white;
+  text-decoration: none;
+}
+
+.contentWrapper {
+  font-family:Verdana, Tahoma, sans-serif;
+}
+
+
+
+.contentWrapper2 {
+  background: #36402C;
+  height: 200px;
+  margin-top: 30px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+.contentWrapper2 img {
+  border: 2px solid #36402C;
+  border-radius: 15px;
+}
+
 
 /* #header, img {
   display: flex;
@@ -42,7 +75,7 @@ a {
 
 /* === ... === */
 #tjanster {
-  border: 2px solid #eeb631;
+  border: 2px solid #36402C;
   border-radius: 5px;
   width: fit-content;
   margin-top: 10px;
