@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  background: #d6c7b2 ;
+  background: white;
 }
 
 body {
@@ -11,24 +11,40 @@ body {
 }
 
 /* === HEADER === */
+/* #header {
+  border: 2px solid #eeb631;
+  border-radius: 20px;
+  padding: 10px;
+  background: #eeb631;
+  background-color: #eeb631;
+  margin: 0;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+} */
+
 #header {
-    border: 2px solid #eeb631;
-    border-radius: 20px;
-
-    display: flex;
-    align-items: baseline;
-    justify-content: space-evenly;
+  background: #eeb631;
+  width: 100vw;
+  margin: 0px;
 }
 
-#header, a {
-    text-decoration: none;
+/* #header, img {
+  display: flex;
+  align-items: center;
 }
+
+#header,
+a {
+  text-decoration: none;
+} */
 
 /* === ... === */
 #tjanster {
-    border: 2px solid #eeb631;
-    border-radius: 5px;
-    width: fit-content;
-    margin-top: 10px;
-    padding: 10px;
+  border: 2px solid #eeb631;
+  border-radius: 5px;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 10px;
 }
