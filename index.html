@@ -14,27 +14,77 @@
         <h1>Hundpensionat Tassen</h1>
         <nav>
             <!-- ändra ordning på länkarna -->
-            <a href="oppettider">Öppettider</a>
-            <a href="tjanster">Tjänster</a>
-            <a href="boka">Bokningar</a>
-            <a href="kontakt">Kontakta oss</a>
-            <a href="oppet">Öppet/Stängt</a>
-            <a href="omdomen">Omdömen</a>
-            <a href="vader">Vädret</a>
+            <a href="#tjanster">Tjänster</a>
+            <a href="#boka">Bokningar</a>
+            <a href="#kontakt">Kontakta oss</a>
+            <a href="#oppet">Öppet/Stängt</a>
+            <a href="#omdomen">Omdömen</a>
+            <a href="#vader">Vädret</a>
             <!-- <a href="#personal">Våran personal</a> -->
         </nav>
     </section>
 
     <section id="info">
-        <h2>Vilka vi är och vad vi gör.</h2> <!-- lägga till mer text senare -->
-        <p>När din hund checkar in på hundpensionat Tassen handlar det om dygnet-runt omsorg.
-            Vi fungerar som ett hunddagis/hotell för din kära hund när du ska resa bort. Här har vi plats för
-            tolv hundar och vi har ett stort inhägnat utomhusområde där hundarna får springa runt.
+        <h2>Omsorg, trygghet och glädje – varje dag</h2> <!-- lägga till mer text senare -->
+        <p>Hundpensionat Tassen är ett modernt och omtänksamt hundpensionat som erbjuder trygg omsorg när du behöver
+            avlastning eller ska resa bort. Vi arbetar med små grupper för att kunna ge varje hund den uppmärksamhet den
+            förtjänar. Varje dag innehåller flera promenader, lekstunder i vårt stora inhägnade uteområde, mental
+            aktivering och lugna vilopauser i våra mysiga vilorum.
+
+            Vi tar emot hundar i alla åldrar och anpassar aktiviteterna efter individens behov. Valpar får extra
+            trygghet och rutiner, aktiva hundar får mer motion och lek, och äldre hundar får lugnare promenader och
+            mjuka viloplatser. Vår personal har lång erfarenhet av hundhantering och arbetar alltid med positiv
+            förstärkning och respekt för varje hunds personlighet.
+
+            Som hundägare ska du känna dig helt trygg med att lämna din hund hos oss. Vi håller en hög standard på
+            säkerhet, hygien och tillsyn, och ser till att varje hund får en dag fylld av glädje, trygghet och omtanke.
         </p>
     </section>
 
-    <section id="vader">
-        <h2>Vädret just nu:</h2>
+    <section id="oppet">
+
+        <h2>Öppet just nu</h2>
+        <p id="tid"></p>
+        <p id="datum"></p>
+        <p id="status"></p>
+
+    </section>
+
+    <section class="contentWrapper2">
+
+        <img src="Hund1.jpg" alt="Bilden visar en blandrashund mellan golden retriever och herdehund" width="220px"
+            height="170px">
+        <img src="Hund2.jpg" alt="Bilden visar två vuxna golden retriever, en brun och en vit" width="220px"
+            height="170px">
+        <img src="Hund3.jpg" alt="Bilden visar en golden retriever valp springandes mot kameran" width="220px"
+            height="170px">
+
+    </section>
+
+    <section id="omdomen">
+        <h2>Tidigare kunders omdömen</h2>
+
+        <div class="omdomen-rad">
+            <div class="omdome-kort">
+                <p>“Tassen tog hand om vår labrador som om det vore deras egen hund.”</p>
+                <span>– Karin, Solna</span>
+            </div>
+
+            <div class="omdome-kort">
+                <p>“Fantastisk personal och trygg miljö. Vår valp älskade det!”</p>
+                <span>– Jonas, Kungsängen</span>
+            </div>
+
+            <div class="omdome-kort">
+                <p>“Proffsigt, rent och väldigt omtänksamt. Rekommenderas varmt.”</p>
+                <span>– Sofia, Huddinge</span>
+            </div>
+
+            <div class="omdome-kort">
+                <p>“Vi har provat flera pensionat – Tassen är överlägset bäst.”</p>
+                <span>– Marcus, Södertälje</span>
+            </div>
+        </div>
     </section>
 
     <section id="tjanster"> <!-- Kanske flytta under contentWrapper2 senare -->
@@ -66,13 +116,28 @@
             </tr>
         </table>
     </section>
-    <section class="contentWrapper2">
 
-        <img src="Hund1.jpg" alt="Bilden visar en blandrashund mellan golden retriever och herdehund" width="220px" height="170px">
-        <img src="Hund2.jpg" alt="Bilden visar två vuxna golden retriever, en brun och en vit" width="220px" height="170px">
-        <img src="Hund3.jpg" alt="Bilden visar en golden retriever valp springandes mot kameran" width="220px" height="170px">
+    <section id="boka">
+        <h2>Boka en tid</h2>
 
+        <p>Din förfrågan sparas i din webbläsare – vi ringer upp dig.</p>
+
+        <form id="bokningsForm">
+            <label for="hund">Hundens namn:</label>
+            <input id="hund" type="text">
+
+            <label for="datum">Önskat datum:</label>
+            <input id="datum" type="date">
+
+            <button type="submit">Skicka förfrågan</button>
+        </form>
+
+        <ul id="bokningsLista"></ul>
     </section>
+
+    <!-- <section id="vader">
+        <h2>Vädret just nu:</h2>
+    </section> === INTE NÖDVÄNDIGT DÅ JAG HAR OMDÖMEN ISTÄLLET === -->
 
     <section id="oppettider">
         <h2>Våra öppettider</h2>
