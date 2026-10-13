@@ -13,6 +13,10 @@ body {
 
 /* === HEADER === */
 
+nav a:not(:last-child)::after {
+  content: " | ";
+}
+
 .contentWrapper {
   background: #36402C;
   padding: 20px;
@@ -127,5 +131,28 @@ body {
     width: 100%;
   }
 }
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #36402C;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  /* gömd från start */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#scrollTopBtn:hover {
+  background-color: #36402C;
+}
+
 
 /* === MOBILANPASSNING === */

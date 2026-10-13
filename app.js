@@ -8,3 +8,22 @@ fetch("https://api.open-meteo.com/v1/forecast?latitude=59.57&longitude=17.53&cur
     document.getElementById("vader").innerHTML =
       `Temperatur: ${temp}°C · Vind: ${wind} m/s`;
   });
+
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 600) { 
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
