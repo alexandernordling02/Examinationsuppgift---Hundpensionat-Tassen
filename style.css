@@ -8,23 +8,7 @@ html, body {
 *::before,
 *::after {
   box-sizing: border-box;
-  /* background: white; */
 }
-
-
-/* === HEADER === */
-/* #header {
-  border: 2px solid #eeb631;
-  border-radius: 20px;
-  padding: 10px;
-  background: #eeb631;
-  background-color: #eeb631;
-  margin: 0;
-
-  display: flex;
-  align-items: baseline;
-  justify-content: space-evenly;
-} */
 
 /* === HEADER === */
 
@@ -139,15 +123,14 @@ html, body {
     }
 }
 
+/* === MOBILANPASSNING === */
 
-/* #header, img {
-  display: flex;
-  align-items: center;
+@media (max-width: 700px) {
+    .info-layout {
+        flex-direction: column;
+    }
+
+    .info-right {
+        width: 100%;
+    }
 }
-
-#header,
-a {
-  text-decoration: none;
-} */
-
-/* === ... === */
