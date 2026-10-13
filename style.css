@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -19,15 +20,17 @@ html, body {
   align-items: center;
   justify-content: space-evenly;
   color: white;
+
+  position: sticky;
+  top: 0;
+  background-color: #36402C;
+  z-index: 1000;
+  padding: 10px 0;
 }
 
 .contentWrapper a {
   color: white;
   text-decoration: none;
-}
-
-.contentWrapper {
-  font-family:Verdana, Tahoma, sans-serif;
 }
 
 #info {
@@ -82,55 +85,45 @@ html, body {
   width: fit-content;
   padding: 5px;
   margin-left: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .omdomen-rad {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 20px 0;
 }
 
 .omdome-kort {
-    background-color: #f7f7f7;
-    padding: 15px;
-    border: 2px solid #36402C;
-    border-radius: 8px;
-    width: 22%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-left: 20px;
-    margin-right: 20px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border: 2px solid #36402C;
+  border-radius: 8px;
+  width: 22%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .omdome-kort p {
-    font-style: italic;
-    margin-bottom: 8px;
+  font-style: italic;
+  margin-bottom: 8px;
 }
 
 .omdome-kort span {
-    font-weight: bold;
-    font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 700px) {
-    .omdomen-rad {
-        flex-direction: column;
-    }
+  .omdomen-rad {
+    flex-direction: column;
+  }
 
-    .omdome-kort {
-        width: 100%;
-    }
+  .omdome-kort {
+    width: 100%;
+  }
 }
 
 /* === MOBILANPASSNING === */
-
-@media (max-width: 700px) {
-    .info-layout {
-        flex-direction: column;
-    }
-
-    .info-right {
-        width: 100%;
-    }
-}
