@@ -22,6 +22,13 @@ En responsiv webbplats för hundpensionat Tassen.
 - LocalStorage
 - Open-Meteo API
 
+# Vad var svårast/vad lärde jag mig
+
+Jag hade två element med id="datum".
+När bokningssystemet skulle hämta datumet fick jag undefined.
+Jag felsökte med console.log() i submit-funktionen och upptäckte att datumvärdet inte lästes in.
+Lösningen var att byta input-fältets id till bokningsDatum och uppdatera JavaScript-koden.
+
 # Skapad av:
 
 Alexander Nordling - Student Nackademin
