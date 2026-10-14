@@ -1,6 +1,4 @@
-// ====================================
 // VÄDER
-// ====================================
 
 async function hamtaVader() {
     try {
@@ -68,7 +66,7 @@ async function hamtaVader() {
         }
 
         document.getElementById("vaderOrt").textContent =
-            "📍 Kungsängen";
+            "📍 Stockholm";
 
         document.getElementById("vaderTemp").textContent =
             `${emoji} ${temperatur}°C`;
@@ -91,9 +89,8 @@ async function hamtaVader() {
 
 hamtaVader();
 
-// ====================================
+
 // SCROLL TO TOP
-// ====================================
 
 const scrollBtn = document.getElementById("scrollTopBtn");
 
@@ -112,9 +109,8 @@ scrollBtn.addEventListener("click", () => {
     });
 });
 
-// ====================================
+
 // ÖPPET / STÄNGT
-// ====================================
 
 function uppdateraOppetStatus() {
 
@@ -189,9 +185,8 @@ setInterval(
     1000
 );
 
-// ====================================
+
 // BOKNINGSSYSTEM
-// ====================================
 
 class Bokningslista {
 
