@@ -156,3 +156,78 @@ nav a:not(:last-child)::after {
 
 
 /* === MOBILANPASSNING === */
+
+.info-container {
+    display: flex;
+    gap: 25px;
+    margin: 20px;
+    align-items: flex-start;
+}
+
+#info {
+    flex: 2;
+}
+
+.info-paneler {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#oppet, #vader {
+    background-color: #f7f7f7;
+    border: 2px solid #36402C;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+@media (max-width: 700px) {
+    .info-container {
+        flex-direction: column;
+    }
+
+    #info,
+    .info-paneler {
+        width: 100%;
+    }
+}
+
+/* === VÄDER === */
+
+#vader {
+    background-color: #f7f7f7;
+    border: 2px solid #36402C;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#vader h2 {
+  background-color: #36402C;
+  color: white;
+  width: fit-content;
+  padding: 5px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#vaderTemp {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #36402C;
+}
+
+#vaderStatus {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+#oppet h2 {
+  background-color: #36402C;
+  color: white;
+  width: fit-content;
+  padding: 5px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
