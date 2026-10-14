@@ -13,3 +13,15 @@ En responsiv webbplats för hundpensionat Tassen.
 - Avbokning av bokningar
 - Scroll-to-top knapp
 - Mobilanpassad design
+
+# Tekniker
+
+- HTML
+- CSS
+- JavaScript
+- LocalStorage
+- Open-Meteo API
+
+# Skapad av:
+
+Alexander Nordling - Student Nackademin
