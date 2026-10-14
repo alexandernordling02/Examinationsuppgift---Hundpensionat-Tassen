@@ -1,200 +1,78 @@
+/* =========================
+   GLOBALT
+========================= */
+
 html,
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/* === GLOBAL RESET === */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* === HEADER === */
-
-nav a:not(:last-child)::after {
-  content: " | ";
-}
+/* =========================
+   HEADER
+========================= */
 
 .contentWrapper {
-  background: #36402C;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
+    background-color: #36402C;
+    color: white;
 
-  position: sticky;
-  top: 0;
-  background-color: #36402C;
-  z-index: 1000;
-  padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 10px 0;
 }
 
 .contentWrapper a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
 }
 
-#info {
-  background-color: #f7f7f7;
-  border: 2px solid #36402C;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 10px;
-  width: 50%;
+nav a:not(:last-child)::after {
+    content: " | ";
 }
 
-#info h2 {
-  background-color: #36402C;
-  color: white;
-  width: fit-content;
-  padding: 5px;
-}
-
-
-
-#tjanster {
-  border: 2px solid #36402C;
-  border-radius: 5px;
-  width: fit-content;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 10px;
-}
-
-
-.contentWrapper2 {
-  background: #36402C;
-  height: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  display: flex;
-  align-items: baseline;
-  justify-content: space-evenly;
-  padding-top: 15px;
-}
-
-.contentWrapper2 img {
-  border: 2px solid #36402C;
-  border-radius: 15px;
-}
-
-/* === OMDÖMEN === */
-
-#omdomen h2 {
-  background-color: #36402C;
-  color: white;
-  width: fit-content;
-  padding: 5px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
-.omdomen-rad {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.omdome-kort {
-  background-color: #f7f7f7;
-  padding: 15px;
-  border: 2px solid #36402C;
-  border-radius: 8px;
-  width: 22%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.omdome-kort p {
-  font-style: italic;
-  margin-bottom: 8px;
-}
-
-.omdome-kort span {
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 700px) {
-  .omdomen-rad {
-    flex-direction: column;
-  }
-
-  .omdome-kort {
-    width: 100%;
-  }
-}
-
-
-#scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #36402C;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  display: none;
-  /* gömd från start */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-}
-
-#scrollTopBtn:hover {
-  background-color: #36402C;
-}
-
-
-/* === MOBILANPASSNING === */
+/* =========================
+   INFO + SIDOPANELER
+========================= */
 
 .info-container {
     display: flex;
     gap: 25px;
     margin: 20px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 #info {
     flex: 2;
+
+    background-color: #f7f7f7;
+    border: 2px solid #36402C;
+    border-radius: 15px;
+
+    padding: 20px;
+}
+
+#info p {
+    line-height: 1.5;
 }
 
 .info-paneler {
     flex: 1;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-#oppet, #vader {
-    background-color: #f7f7f7;
-    border: 2px solid #36402C;
-    border-radius: 15px;
-    padding: 15px;
-}
-
-@media (max-width: 700px) {
-    .info-container {
-        flex-direction: column;
-    }
-
-    #info,
-    .info-paneler {
-        width: 100%;
-    }
-}
-
-/* === VÄDER === */
-
+#oppet,
 #vader {
     background-color: #f7f7f7;
     border: 2px solid #36402C;
@@ -202,14 +80,49 @@ nav a:not(:last-child)::after {
     padding: 15px;
 }
 
-#vader h2 {
-  background-color: #36402C;
-  color: white;
-  width: fit-content;
-  padding: 5px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+/* =========================
+   RUBRIKER
+========================= */
+
+#info h2,
+#oppet h2,
+#vader h2,
+#omdomen h2,
+#tjanster h2,
+#boka h2,
+#oppettider h2,
+#kontakt h2 {
+    position: relative;
+    width: fit-content;
+    color: #36402C;
+    margin-top: 0;
+    padding-bottom: 10px;
 }
+
+#info h2::after,
+#oppet h2::after,
+#vader h2::after,
+#omdomen h2::after,
+#tjanster h2::after,
+#boka h2::after,
+#oppettider h2::after,
+#kontakt h2::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: #36402C;
+    border-radius: 999px;
+}
+
+/* =========================
+   VÄDER
+========================= */
 
 #vaderTemp {
     font-size: 1.4rem;
@@ -218,16 +131,249 @@ nav a:not(:last-child)::after {
 }
 
 #vaderStatus {
-    margin-top: 10px;
     font-style: italic;
 }
 
+/* =========================
+   ÖPPET/STÄNGT
+========================= */
 
-#oppet h2 {
-  background-color: #36402C;
-  color: white;
-  width: fit-content;
-  padding: 5px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+#status {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   BILDER
+========================= */
+
+.contentWrapper2 {
+    background-color: #36402C;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.contentWrapper2 img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+
+    border-radius: 15px;
+}
+
+/* =========================
+   OMDÖMEN
+========================= */
+
+#omdomen {
+    margin: 20px;
+}
+
+.omdomen-rad {
+    display: flex;
+    gap: 20px;
+}
+
+.omdome-kort {
+    flex: 1;
+
+    background-color: #f7f7f7;
+
+    border: 2px solid #36402C;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.omdome-kort p {
+    font-style: italic;
+}
+
+.omdome-kort span {
+    font-weight: bold;
+}
+
+/* =========================
+   TJÄNSTER
+========================= */
+
+#tjanster {
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #36402C;
+    padding: 10px;
+}
+
+th {
+    background-color: #36402C;
+    color: white;
+}
+
+/* =========================
+   BOKNING
+========================= */
+
+#boka {
+    margin: 20px;
+}
+
+#bokningsForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 400px;
+}
+
+#bokningsForm input,
+#bokningsForm button {
+    padding: 10px;
+}
+
+/* =========================
+   ÖPPETTIDER
+========================= */
+
+#oppettider {
+    margin: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #36402C;
+    color: white;
+
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer h2 {
+    color: white;
+}
+
+footer h2::after {
+    background-color: white;
+}
+
+/* =========================
+   SCROLL-KNAPP
+========================= */
+
+#scrollTopBtn {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background-color: #36402C;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    z-index: 9999;
+}
+
+#scrollTopBtn:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   MOBIL
+========================= */
+
+@media (max-width: 700px) {
+
+    .contentWrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+
+    .contentWrapper2 {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .omdomen-rad {
+        flex-direction: column;
+    }
+}
+
+/* === BOKNING === */
+
+#bokningsLista {
+    list-style: none;
+    padding: 0;
+}
+
+#bokningsLista li {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #36402C;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bokningsLista button {
+    background-color: #C62828;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+#bokningsLista button:hover {
+    opacity: 0.9;
+}
+
+#bokningsForm input,
+#bokningsForm button {
+    border-radius: 8px;
+}
+
+#felmeddelande {
+    color: #C62828;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 24px;
 }

@@ -1,23 +1,6 @@
-// === LIVE VÄDER === 
-
-// fetch("https://api.open-meteo.com/v1/forecast?latitude=59.57&longitude=17.53&current_weather=true")
-//     .then(response => response.json())
-//     .then(data => {
-//         const temp = data.current_weather.temperature;
-//         const wind = data.current_weather.windspeed;
-
-//         document.getElementById("vaderTemp").textContent =
-//             `Temperatur: ${temp}°C`;
-
-//         document.getElementById("vaderStatus").textContent =
-//             `Vind: ${wind} m/s`;
-
-//         document.getElementById("vaderOrt").textContent =
-//             "Kungsängen";
-//     })
-//     .catch(error => {
-//         console.error("Fel vid hämtning av väder:", error);
-//     });
+// ====================================
+// VÄDER
+// ====================================
 
 async function hamtaVader() {
     try {
@@ -108,8 +91,9 @@ async function hamtaVader() {
 
 hamtaVader();
 
-
-// === SCROLL TO TOP ===
+// ====================================
+// SCROLL TO TOP
+// ====================================
 
 const scrollBtn = document.getElementById("scrollTopBtn");
 
@@ -128,14 +112,25 @@ scrollBtn.addEventListener("click", () => {
     });
 });
 
-// === ÖPPET/STÄNGT ===
+// ====================================
+// ÖPPET / STÄNGT
+// ====================================
 
 function uppdateraOppetStatus() {
+
     const nu = new Date();
 
-    const timmar = String(nu.getHours()).padStart(2, "0");
-    const minuter = String(nu.getMinutes()).padStart(2, "0");
-    const sekunder = String(nu.getSeconds()).padStart(2, "0");
+    const timmar = String(
+        nu.getHours()
+    ).padStart(2, "0");
+
+    const minuter = String(
+        nu.getMinutes()
+    ).padStart(2, "0");
+
+    const sekunder = String(
+        nu.getSeconds()
+    ).padStart(2, "0");
 
     const veckodagar = [
         "Söndag",
@@ -158,31 +153,185 @@ function uppdateraOppetStatus() {
 
     let oppet = false;
 
-    // Måndag–Fredag
     if (dag >= 1 && dag <= 5) {
         oppet = klockslag >= 7 && klockslag < 18;
     }
 
-    // Lördag
     else if (dag === 6) {
         oppet = klockslag >= 9 && klockslag < 14;
     }
 
-    // Söndag
-    else {
-        oppet = false;
-    }
-
-    const statusElement = document.getElementById("status");
+    const statusElement =
+        document.getElementById("status");
 
     if (oppet) {
-        statusElement.textContent = "🟢 Vi har öppet just nu";
-        statusElement.style.color = "green";
+
+        statusElement.textContent =
+            "🟢 Vi har öppet just nu";
+
+        statusElement.style.color =
+            "#2E7D32";
+
     } else {
-        statusElement.textContent = "🔴 Vi har stängt just nu";
-        statusElement.style.color = "red";
+
+        statusElement.textContent =
+            "🔴 Vi har stängt just nu";
+
+        statusElement.style.color =
+            "#C62828";
     }
 }
 
 uppdateraOppetStatus();
-setInterval(uppdateraOppetStatus, 1000);
+
+setInterval(
+    uppdateraOppetStatus,
+    1000
+);
+
+// ====================================
+// BOKNINGSSYSTEM
+// ====================================
+
+class Bokningslista {
+
+    constructor() {
+        this.bokningar =
+            JSON.parse(
+                localStorage.getItem("bokningar")
+            ) || [];
+    }
+
+    laggTill(bokning) {
+        this.bokningar.push(bokning);
+        this.spara();
+    }
+
+    taBort(id) {
+
+        this.bokningar =
+            this.bokningar.filter(
+                bokning => bokning.id !== id
+            );
+
+        this.spara();
+    }
+
+    spara() {
+        localStorage.setItem(
+            "bokningar",
+            JSON.stringify(this.bokningar)
+        );
+    }
+}
+
+const bokningsLista =
+    new Bokningslista();
+
+const form =
+    document.getElementById("bokningsForm");
+
+const lista =
+    document.getElementById("bokningsLista");
+
+const felmeddelande =
+    document.getElementById("felmeddelande");
+
+function renderaBokningar() {
+
+    lista.innerHTML = "";
+
+    if (bokningsLista.bokningar.length === 0) {
+
+        lista.innerHTML =
+            "<li>Inga bokningar än.</li>";
+
+        return;
+    }
+
+    bokningsLista.bokningar.forEach(
+        bokning => {
+
+            const li =
+                document.createElement("li");
+
+            li.innerHTML = `
+                ${bokning.hund} - ${bokning.datum}
+                <button data-id="${bokning.id}">
+                    Avboka
+                </button>
+            `;
+
+            lista.appendChild(li);
+        }
+    );
+}
+
+form.addEventListener(
+    "submit",
+    (event) => {
+
+        event.preventDefault();
+
+        const hund =
+            document.getElementById("hund")
+                .value
+                .trim();
+
+        const datum =
+            document.getElementById("bokningsDatum")
+                .value;
+
+        felmeddelande.style.color =
+            "#C62828";
+
+        if (!hund || !datum) {
+
+            felmeddelande.textContent =
+                "⚠️ Fyll i både hundens namn och önskat datum.";
+
+            return;
+        }
+
+        const nyBokning = {
+            id: Date.now(),
+            hund,
+            datum
+        };
+
+        bokningsLista.laggTill(
+            nyBokning
+        );
+
+        renderaBokningar();
+
+        felmeddelande.style.color =
+            "#2E7D32";
+
+        felmeddelande.textContent =
+            "✅ Bokningsförfrågan sparad!";
+
+        form.reset();
+    }
+);
+
+lista.addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            event.target.tagName === "BUTTON"
+        ) {
+
+            const id = Number(
+                event.target.dataset.id
+            );
+
+            bokningsLista.taBort(id);
+
+            renderaBokningar();
+        }
+    }
+);
+
+renderaBokningar();
