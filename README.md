@@ -29,6 +29,10 @@ När bokningssystemet skulle hämta datumet fick jag undefined.
 Jag felsökte med console.log() i submit-funktionen och upptäckte att datumvärdet inte lästes in.
 Lösningen var att byta input-fältets id till bokningsDatum och uppdatera JavaScript-koden.
 
+# Scope & context
+
+ klassen Bokningslista används this för att komma åt objektets egen bokningslista. När metoden laggTill() körs sparas den nya bokningen i this.bokningar. På så sätt äger objektet själv datan istället för att globala variabler används. Jag använde även arrow functions i mina event listeners eftersom de behåller sitt lexikala scope.
+
 # Skapad av:
 
 Alexander Nordling - Student Nackademin
