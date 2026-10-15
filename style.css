@@ -1,6 +1,4 @@
-/* =========================
-   GLOBALT
-========================= */
+/* GLOBALT */
 
 html,
 body {
@@ -14,9 +12,7 @@ body {
     box-sizing: border-box;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .contentWrapper {
     background-color: #36402C;
@@ -39,9 +35,7 @@ nav a:not(:last-child)::after {
     content: " | ";
 }
 
-/* =========================
-   INFO + SIDOPANELER
-========================= */
+/* INFO + SIDOPANELER */
 
 .info-container {
     display: flex;
@@ -80,9 +74,7 @@ nav a:not(:last-child)::after {
     padding: 15px;
 }
 
-/* =========================
-   RUBRIKER
-========================= */
+/* RUBRIKER */
 
 #info h2,
 #oppet h2,
@@ -120,9 +112,7 @@ nav a:not(:last-child)::after {
     border-radius: 999px;
 }
 
-/* =========================
-   VÄDER
-========================= */
+/* VÄDER */
 
 #vaderTemp {
     font-size: 1.4rem;
@@ -134,18 +124,14 @@ nav a:not(:last-child)::after {
     font-style: italic;
 }
 
-/* =========================
-   ÖPPET/STÄNGT
-========================= */
+/* ÖPPET/STÄNGT */
 
 #status {
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-/* =========================
-   BILDER
-========================= */
+/* BILDER */
 
 .contentWrapper2 {
     background-color: #36402C;
@@ -166,9 +152,7 @@ nav a:not(:last-child)::after {
     border-radius: 15px;
 }
 
-/* =========================
-   OMDÖMEN
-========================= */
+/* OMDÖMEN */
 
 #omdomen {
     margin: 20px;
@@ -200,9 +184,7 @@ nav a:not(:last-child)::after {
     font-weight: bold;
 }
 
-/* =========================
-   TJÄNSTER
-========================= */
+/* TJÄNSTER */
 
 #tjanster {
     margin: 20px;
@@ -223,9 +205,7 @@ th {
     color: white;
 }
 
-/* =========================
-   BOKNING
-========================= */
+/* BOKNING */
 
 #boka {
     margin: 20px;
@@ -244,17 +224,13 @@ th {
     padding: 10px;
 }
 
-/* =========================
-   ÖPPETTIDER
-========================= */
+/* ÖPPETTIDER */
 
 #oppettider {
     margin: 20px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     background-color: #36402C;
@@ -272,9 +248,7 @@ footer h2::after {
     background-color: white;
 }
 
-/* =========================
-   SCROLL-KNAPP
-========================= */
+/* SCROLL-KNAPP */
 
 #scrollTopBtn {
     position: fixed;
@@ -303,9 +277,7 @@ footer h2::after {
     opacity: 0.9;
 }
 
-/* =========================
-   MOBIL
-========================= */
+/* MOBIL */
 
 @media (max-width: 700px) {
 
@@ -335,7 +307,7 @@ footer h2::after {
     }
 }
 
-/* === BOKNING === */
+/* BOKNING */
 
 #bokningsLista {
     list-style: none;
